@@ -818,6 +818,32 @@ h2 {
   box-shadow: 0 0 20px 4px rgba(255, 34, 85, .1)
 }
 
+
+.install-requirement {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, rgba(255, 34, 85, 0.05), rgba(255, 34, 85, 0.02));
+  border: 1.5px solid rgba(255, 34, 85, 0.3);
+  border-radius: 8px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.requirement-icon {
+  font-size: 24px;
+  flex-shrink: 0
+}
+
+.requirement-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text)
+}
+
 .steps {
   display: flex;
   flex-direction: column;
