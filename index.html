@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PacketPulse — Real-Time Network Security Monitoring</title>
+  <meta name="description"
+    content="PacketPulse is an enterprise-grade terminal-based network security tool. Real-time packet analysis, DNS threat hunting, URL scanning, and device forensics from your CLI.">
+  <meta name="keywords"
+    content="network security, packet sniffer, DNS monitoring, threat detection, cybersecurity, CLI tool">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta property="og:title" content="PacketPulse — Threats Don't Sleep. Neither Should Your Network.">
+  <meta property="og:description"
+    content="Real-time packet analysis, DNS threat hunting, and device forensics from your terminal.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PacketPulse",
+    "operatingSystem": "Linux, macOS, Windows",
+    "applicationCategory": "SecurityApplication",
+    "description": "Enterprise-grade terminal-based network security tool. Real-time packet analysis, DNS threat hunting, and URL scanning.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2.0.1">
+</head>
+
+<body>
+
+  <!-- FIXED DREAMWALKER BACKGROUND -->
+  <div id="dw-bg">
+    <img src="Dreamwalker4u.png" alt="" id="dw-bg-img" onerror="this.style.display='none'">
+    <div id="dw-glow-lines">
+      <div class="glow-line gl-1"></div>
+      <div class="glow-line gl-2"></div>
+      <div class="glow-line gl-3"></div>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo" id="nav-logo">PACKET<span>PULSE</span></div>
+    <ul id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#arsenal">Arsenal</a></li>
+      <li><a href="#compare">Compare</a></li>
+      <li><a href="#install">Install</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#install" class="nav-cta" id="nav-get-started">Get Started</a>
+  </nav>
+
+  <!-- ============ WRAPPER FOR SCROLL ZOOM ============ -->
+  <main id="main-wrap">
+
+    <!-- ============ HERO ============ -->
+    <section id="hero">
+      <canvas id="net" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <div class="hero-tag"><span class="pulse-dot"></span> Live threat monitoring active</div>
+        <h1>
+          <span class="glitch" data-text="THREATS DON'T">THREATS DON'T</span><br>
+          <span class="threat glitch" data-text="SLEEP.">SLEEP.</span><br>
+          <span class="accent">NEITHER SHOULD</span><br>
+          YOUR NETWORK.
+        </h1>
+        <p class="hero-sub">Real-time packet analysis, DNS threat hunting, and device forensics — all from your
+          terminal. Enterprise-grade intelligence, zero GUI bloat.</p>
+        <div class="hero-ctas">
+          <a href="#install" class="btn-primary" id="hero-cta-install">Start Monitoring Now</a>
+          <a href="https://github.com/tejppatil/PacketPulse" target="_blank" rel="noopener" class="btn-outline"
+            id="hero-cta-github">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>Scroll to explore
+      </div>
+    </section>
+
+    <!-- ============ 01 — ABOUT ============ -->
+    <section id="about" class="reveal">
+      <div class="section-glow"></div>
+      <div class="about-text">
+        <div class="section-tag">01 — What is PacketPulse</div>
+        <h2>See Every<br>Byte. Miss<br>Nothing.</h2>
+        <div class="divider"></div>
+        <p>PacketPulse is <strong>enterprise-grade network security intelligence</strong> delivered through an intuitive
+          terminal interface. Built for security engineers who live in the CLI.</p>
+        <p>Capture packets in real-time, hunt <strong>DNS threats</strong>, scan URLs for malicious content, profile USB
+          devices, and correlate forensic data — all without leaving your command line.</p>
+        <p>Powered by <strong>VirusTotal</strong>, Google Safe Browsing, nmap, and proprietary <strong>DGA
+            detection</strong> — all unified in a single, scriptable tool.</p>
+        <div class="about-metrics">
+          <div>
+            <div class="metric-val">5</div>
+            <div class="metric-label">Modules</div>
+          </div>
+          <div>
+            <div class="metric-val">3</div>
+            <div class="metric-label">Threat APIs</div>
+          </div>
+          <div>
+            <div class="metric-val">&lt;50ms</div>
+            <div class="metric-label">Capture Latency</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="terminal-viz">
+          <div class="term-bar">
+            <div class="dot d-r"></div>
+            <div class="dot d-y"></div>
+            <div class="dot d-g"></div>
+            <span style="font-size:11px;color:var(--muted);margin-left:8px">packetpulse — monitoring</span>
+          </div>
+          <div class="term-line">$ sudo packetpulse --interface eth0</div>
+          <div class="term-line dim">[INFO] Initializing packet capture...</div>
+          <div class="term-line" style="color:var(--cyan)">[LIVE] Capturing on eth0 — 847 packets/s</div>
+          <div class="term-line warn">[ALERT] DGA domain detected: x7k4.ru → entropy 4.92</div>
+          <div class="term-line" style="color:var(--green)">[SAFE] 192.168.1.12 → google.com:443 SSL/TLS OK</div>
+          <div class="term-line warn">[BLOCK] VirusTotal: malware.top — 18/72 engines flagged</div>
+          <div class="term-line dim">[USB] New device: SanDisk Ultra — profiling...</div>
+          <div class="term-line" style="color:var(--cyan)">[DNS] Beaconing pattern: 192.168.1.88 — 34 req/min</div>
+          <div style="margin-top:12px;color:var(--cyan);font-family:var(--mono);font-size:13px">▶ <span
+              class="term-cursor"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 — ARSENAL ============ -->
+    <section id="arsenal" class="reveal-scale">
+      <div class="section-glow"></div>
+      <div class="section-tag">02 — The Arsenal</div>
+      <h2>Five Modules.<br>One Terminal.</h2>
+      <div class="divider"></div>
+      <div class="cards-grid">
+
+        <div class="feat-card" id="card-sniffer">
+          <div class="card-num">MODULE 01</div>
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="20" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="24" cy="24" r="12" stroke="#00d9ff" stroke-width="1" stroke-dasharray="4 2" />
+              <circle cx="24" cy="24" r="4" fill="#00d9ff" />
+              <line x1="24" y1="4" x2="24" y2="44" stroke="#00d9ff" stroke-width=".5" stroke-dasharray="2 2"
+                opacity=".4" />
+              <line x1="4" y1="24" x2="44" y2="24" stroke="#00d9ff" stroke-width=".5" stroke-dasharray="2 2"
+                opacity=".4" />
+            </svg>
+          </div>
+          <div class="card-title">Packet Sniffer</div>
+          <div class="card-desc">Deep HTTP, DNS, and GeoIP packet inspection in real-time. Capture, filter, and analyze
+            network traffic at the byte level.</div>
+          <div class="card-badge">● Live capture active</div>
+        </div>
+
+        <div class="feat-card" id="card-url">
+          <div class="card-num">MODULE 02</div>
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 48 48" fill="none">
+              <path d="M8 16 L24 8 L40 16 L40 32 L24 40 L8 32 Z" stroke="#00d9ff" stroke-width="1.5" />
+              <path d="M8 16 L24 24 L40 16" stroke="#00d9ff" stroke-width=".8" stroke-dasharray="3 2" />
+              <line x1="24" y1="24" x2="24" y2="40" stroke="#00d9ff" stroke-width=".8" stroke-dasharray="3 2" />
+              <circle cx="24" cy="24" r="3" fill="#00d9ff" opacity=".7" />
+            </svg>
+          </div>
+          <div class="card-title">URL Scanner</div>
+          <div class="card-desc">VirusTotal + Google Safe Browsing + SSL certificate validation. Know if a URL is
+            malicious before your users click it.</div>
+          <div class="card-badge">72 engine scan</div>
+        </div>
+
+        <div class="feat-card" id="card-dns">
+          <div class="card-num">MODULE 03</div>
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="10" width="36" height="28" rx="2" stroke="#ff2255" stroke-width="1.5" />
+              <line x1="6" y1="18" x2="42" y2="18" stroke="#ff2255" stroke-width=".8" opacity=".5" />
+              <circle cx="16" cy="14" r="2" fill="#ff2255" opacity=".8" />
+              <circle cx="24" cy="24" r="1.5" fill="#ff2255" />
+              <polyline points="10,32 18,26 26,30 34,22 42,24" stroke="#ff2255" stroke-width="1.2" fill="none" />
+            </svg>
+          </div>
+          <div class="card-title">DNS Monitor</div>
+          <div class="card-desc">DGA domain detection with entropy scoring, beaconing pattern flags, and high-risk TLD
+            identification in real-time.</div>
+          <div class="card-badge"
+            style="color:var(--red);background:rgba(255,34,85,0.08);border-color:rgba(255,34,85,0.25)">● 3 DGA domains
+            flagged</div>
+        </div>
+
+        <div class="feat-card" id="card-forensics">
+          <div class="card-num">MODULE 04</div>
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 48 48" fill="none">
+              <rect x="16" y="8" width="16" height="32" rx="2" stroke="#00d9ff" stroke-width="1.5" />
+              <rect x="20" y="12" width="8" height="6" rx="1" fill="#00d9ff" opacity=".3" />
+              <line x1="4" y1="24" x2="16" y2="24" stroke="#00d9ff" stroke-width="1" stroke-dasharray="3 2" />
+              <line x1="32" y1="24" x2="44" y2="24" stroke="#00d9ff" stroke-width="1" stroke-dasharray="3 2" />
+              <circle cx="4" cy="24" r="2.5" fill="#00d9ff" opacity=".6" />
+              <circle cx="44" cy="24" r="2.5" fill="#00d9ff" opacity=".6" />
+            </svg>
+          </div>
+          <div class="card-title">Device Forensics</div>
+          <div class="card-desc">USB device profiling, LAN host fingerprinting, and nmap integration. Know exactly
+            what's on your network.</div>
+          <div class="card-badge">LAN + USB profiling</div>
+        </div>
+
+        <div class="feat-card" id="card-pipeline"
+          style="border-top-color:rgba(0,217,255,.3);background:linear-gradient(135deg,rgba(0,217,255,0.05),transparent)">
+          <div class="card-num">MODULE 05</div>
+          <div class="card-icon">
+            <svg aria-hidden="true" viewBox="0 0 48 48" fill="none">
+              <circle cx="10" cy="10" r="6" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="38" cy="10" r="6" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="10" cy="38" r="6" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="38" cy="38" r="6" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="24" cy="24" r="7" stroke="#00ff88" stroke-width="1.5" />
+              <line x1="15" y1="12" x2="20" y2="19" stroke="#00d9ff" stroke-width=".8" opacity=".5" />
+              <line x1="33" y1="12" x2="28" y2="19" stroke="#00d9ff" stroke-width=".8" opacity=".5" />
+              <line x1="15" y1="36" x2="20" y2="29" stroke="#00d9ff" stroke-width=".8" opacity=".5" />
+              <line x1="33" y1="36" x2="28" y2="29" stroke="#00d9ff" stroke-width=".8" opacity=".5" />
+            </svg>
+          </div>
+          <div class="card-title">Full Pipeline</div>
+          <div class="card-desc">Run all four modules in parallel with unified, correlated output. One command, complete
+            network visibility.</div>
+          <div class="card-badge"
+            style="color:var(--green);background:rgba(0,255,136,0.08);border-color:rgba(0,255,136,0.25)">All modules
+            active</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ 03 — COMPARISON ============ -->
+    <section id="compare" class="reveal-left">
+      <div class="section-glow"></div>
+      <div class="section-tag">03 — Real Threats</div>
+      <h2>What Standard<br>Tools Miss.</h2>
+      <div class="divider"></div>
+      <div class="compare-grid">
+        <div class="compare-col bad">
+          <div class="col-head bad">Without PacketPulse</div>
+          <div class="compare-item">Standard tools ignore suspicious traffic patterns entirely</div>
+          <div class="compare-item">Manual device audits take hours and miss rogue hardware</div>
+          <div class="compare-item">False positives waste analyst time with noisy alerts</div>
+          <div class="compare-item">DNS exfiltration goes undetected until it's too late</div>
+          <div class="compare-item">No correlation between packet data and threat intelligence</div>
+        </div>
+        <div class="compare-col good">
+          <div class="col-head good">With PacketPulse</div>
+          <div class="compare-item">Detects beaconing, DGA domains, and data exfil in real-time</div>
+          <div class="compare-item">Full LAN and USB device forensics profiled in seconds</div>
+          <div class="compare-item">Intelligent flagging with entropy scores and TLD risk ratings</div>
+          <div class="compare-item">DNS monitoring catches tunneling and anomalous query rates</div>
+          <div class="compare-item">VirusTotal + GeoIP + SSL correlation in a single pipeline</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============ 04 — INSTALL ============ -->
+    <section id="install" class="reveal-right">
+      <div class="section-tag">04 — Quick Start</div>
+      <h2>Up in 60<br>Seconds.</h2>
+      <div class="divider"></div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <div class="step-label">Install via pip</div>
+            <div class="code-block">
+              <span class="cmd-text" data-cmd="pip install packetpulse"></span>
+              <button class="copy-btn" data-copy="pip install packetpulse">COPY</button>
+            </div>
+            <div class="step-note">Requires Python 3.8+ and root/admin privileges for packet capture.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <div class="step-label">Set your API key</div>
+            <div class="code-block">
+              <span class="cmd-text" data-cmd='export PACKETPULSE_VT_KEY="your_key"'></span>
+              <button class="copy-btn" data-copy='export PACKETPULSE_VT_KEY="your_key"'>COPY</button>
+            </div>
+            <div class="step-note">Get a free VirusTotal API key at virustotal.com for URL and DNS threat scanning.
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <div class="step-label">Launch PacketPulse</div>
+            <div class="code-block">
+              <span class="cmd-text" data-cmd="sudo packetpulse"></span>
+              <button class="copy-btn" data-copy="sudo packetpulse">COPY</button>
+            </div>
+            <div class="step-note">The interactive menu launches immediately. Select a module or run the full pipeline.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 — TRUST ============ -->
+    <section id="trust" class="reveal-scale">
+      <div class="section-glow"></div>
+      <div class="section-tag">05 — Why PacketPulse</div>
+      <h2>Built for the<br>Command Line.</h2>
+      <div class="divider"></div>
+      <div class="trust-grid">
+        <div class="trust-item" id="trust-fast">
+          <div class="trust-icon-wrap">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 40 40" fill="none"
+              style="display:block;margin:0 auto">
+              <polygon points="20,4 36,32 4,32" stroke="#00d9ff" stroke-width="1.5" fill="none" />
+              <line x1="20" y1="14" x2="20" y2="24" stroke="#00d9ff" stroke-width="2" />
+              <circle cx="20" cy="28" r="1.5" fill="#00d9ff" />
+            </svg>
+          </div>
+          <div class="trust-title">Fast</div>
+          <div class="trust-desc">Real-time analysis with sub-50ms capture latency. No buffering. No delays. Threats
+            flagged the moment they appear.</div>
+          <div class="trust-bar"></div>
+        </div>
+        <div class="trust-item" id="trust-deep">
+          <div class="trust-icon-wrap">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 40 40" fill="none"
+              style="display:block;margin:0 auto">
+              <circle cx="20" cy="20" r="16" stroke="#00d9ff" stroke-width="1.5" />
+              <circle cx="20" cy="20" r="8" stroke="#00d9ff" stroke-width="1" stroke-dasharray="3 2" />
+              <circle cx="20" cy="20" r="3" fill="#00d9ff" />
+            </svg>
+          </div>
+          <div class="trust-title">Deep</div>
+          <div class="trust-desc">Packet-level visibility correlated with VirusTotal, GeoIP, SSL, and proprietary DGA
+            entropy detection.</div>
+          <div class="trust-bar"></div>
+        </div>
+        <div class="trust-item" id="trust-open">
+          <div class="trust-icon-wrap">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 40 40" fill="none"
+              style="display:block;margin:0 auto">
+              <polyline points="6,28 14,16 22,22 30,10 36,14" stroke="#00ff88" stroke-width="2" fill="none" />
+              <circle cx="6" cy="28" r="2" fill="#00ff88" />
+              <circle cx="36" cy="14" r="2" fill="#00ff88" />
+            </svg>
+          </div>
+          <div class="trust-title">Open</div>
+          <div class="trust-desc">CLI-first, fully scriptable, open-source. Integrate into your existing security
+            pipelines with zero friction.</div>
+          <div class="trust-bar"></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ============ 09 — FINAL CTA ============ -->
+    <section id="cta" class="reveal">
+      <div class="section-tag" style="justify-content:center">Get Started</div>
+      <h2>Start Hunting<br><span style="color:var(--cyan)">Threats</span><br>Today.</h2>
+      <p>Open-source. CLI-native. Enterprise-grade.</p>
+      <div class="cta-btns">
+        <a href="#install" class="btn-primary" id="cta-install" style="font-size:15px;padding:20px 48px">Install Now —
+          pip install packetpulse</a>
+        <a href="https://github.com/tejppatil/PacketPulse" target="_blank" rel="noopener" class="btn-outline"
+          id="cta-github" style="font-size:15px;padding:20px 48px">View on GitHub</a>
+      </div>
+    </section>
+
+  </main> <!-- /main-wrap -->
+
+  <!-- FOOTER (outside main-wrap so scale transform doesn't affect it) -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">PACKETPULSE</div>
+      <div class="footer-links">
+        <a href="https://github.com/tejppatil/PacketPulse#readme" target="_blank" rel="noopener">Docs</a>
+        <a href="https://github.com/tejppatil/PacketPulse" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://pypi.org/project/packetpulse/" target="_blank" rel="noopener">PyPI</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PacketPulse. Open-source security tooling.</p>
+      <div class="made-by">Crafted by <span class="dreamwalker">Dreamwalker4u</span></div>
+  </footer>
+
+  <!-- Scroll spacer to account for global zoom expansion -->
+  <div id="scroll-spacer" style="width: 100%; pointer-events: none;"></div>
+
+  <script src="script.js?v=2.0.1"></script>
+</body>
+
+</html>
